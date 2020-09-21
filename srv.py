@@ -2,6 +2,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route('/')
+def hey():
+    return "halloen"
+
 @app.route('/celcius/<value>')
 def calculateF(value):
     return value + " Celcius er " + str(float(value)*1.8 + 32) + " i Fahrenheit"
